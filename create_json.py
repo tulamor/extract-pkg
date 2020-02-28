@@ -13,9 +13,8 @@ args = parser.parse_args()
 
 def extract_data(inputfile):
   with open(inputfile, 'r') as file:
-    for line in file.readlines():
-      match = re.compile(r'^[a-z]+\+([\w]+)\+([\w.]+)-([\w]+).\(([\w]+)\)')
-
+    fullmatch = re.compile(r'(^[a-z]+)\+([\w-]+)\+([\w.]+)-?([\w-\.]*).\(([\w]+)\)')
+    
 
 
 extract_data(args.infile)
