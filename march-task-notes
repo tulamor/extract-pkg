@@ -1,5 +1,25 @@
-#!/bin/bash
+http://linuxcommand.org/lc3_wss0120.php
 
+
+external <- delete
+cgal-toolfile <- pkg name
+1.0 <- version
+nmpfii <- suffix
+hash <- 238f041cecc4192e8175f78ef213fb4a
+
+{pkg_name: $pkg_name, pkg_}
+
+realease_queue_arch.json
+
+it will be list if dictionaries for each ib
+
+cd /build/rtulinov/
+git clone https://github.com/cms-sw/pkgtools
+git clone https://github.com/cms-sw/cmsdist
+
+Create script.sh:
+
+#!/bin/bash
 if [ $# -gt 0 ]; then
     echo "Your command line contains $# arguments"
 else
@@ -12,7 +32,6 @@ pkgtools_tag=$3
 cmsdist_branch=$4
 release_branch=$5
 realease_queue=$6
-
 echo $@ 
 rm -rf pkgtools cmsdist	file.name
 rm -rf build_pretend_cmssw_tool_conf 
@@ -23,8 +42,8 @@ git clone https://github.com/cms-sw/cmsdist -b $cmsdist_branch
 ./pkgtools/cmsBuild -i build_pretend_cmssw_tool_conf/ -c cmsdist/ --repository cms.week0 \
 --arch $arch -j 16 --pretend build $pkg_name | tee logfile   
 
-
 echo "Running python script to extract data"
-./create_json.py 
+rm -rf build_pretend_cmssw_tool_conf 
 
-rm -rf build_pretend_cmssw_tool_conf
+run script:
+./script.sh slc7_amd64_gcc820 cmssw-tool-conf V00-32-XX IB/CMSSW_11_1_X/master master CMSSW_11_1_X
