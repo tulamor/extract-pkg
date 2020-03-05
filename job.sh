@@ -14,8 +14,7 @@ release_branch=$5
 realease_queue=$6
 
 echo $@ 
-rm -rf pkgtools cmsdist	file.name
-rm -rf build_pretend_cmssw_tool_conf 
+
 
 git clone https://github.com/cms-sw/pkgtools -b $pkgtools_tag
 git clone https://github.com/cms-sw/cmsdist -b $cmsdist_branch
@@ -25,6 +24,4 @@ git clone https://github.com/cms-sw/cmsdist -b $cmsdist_branch
 
 
 echo "Running python script to extract data"
-./create_json.py 
-
-rm -rf build_pretend_cmssw_tool_conf
+./extract-pkg/create_json.py

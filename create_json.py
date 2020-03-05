@@ -7,7 +7,7 @@ import re
 from glob import glob
 import os
 import json
-from os.path import dirname
+from os.path import dirname, realpath
 
 def extract_data(inputfile):
   list_of_dicts = []
