@@ -51,3 +51,17 @@ run script:
 https://unix.stackexchange.com/questions/31414/how-can-i-pass-a-command-line-argument-into-a-shell-script
 http://linuxcommand.org/lc3_wss0120.php
 http://faculty.salina.k-state.edu/tim/unix_sg/shell/variables.html
+
+
+arch= slc7_amd64_gcc820
+pkg_name= cmssw-tool-conf
+pkgtools_tag= V00-32-XX
+cmsdist_branch= IB/CMSSW_11_1_X/master
+release_branch= master
+realease_queue= CMSSW_11_1_X
+
+https://stackoverflow.com/questions/22814559/how-when-does-execute-shell-mark-a-build-as-failure-in-jenkins
+
+https://scotch.io/tutorials/an-introduction-to-regex-in-python
+
+scp -r rotu2469@uosis.mif.vu.lt:/stud3/2014/rotu2469/www /home/ruser/www/
