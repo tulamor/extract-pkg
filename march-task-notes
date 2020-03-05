@@ -47,3 +47,7 @@ rm -rf build_pretend_cmssw_tool_conf
 
 run script:
 ./script.sh slc7_amd64_gcc820 cmssw-tool-conf V00-32-XX IB/CMSSW_11_1_X/master master CMSSW_11_1_X
+
+https://unix.stackexchange.com/questions/31414/how-can-i-pass-a-command-line-argument-into-a-shell-script
+http://linuxcommand.org/lc3_wss0120.php
+http://faculty.salina.k-state.edu/tim/unix_sg/shell/variables.html

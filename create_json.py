@@ -7,6 +7,7 @@ import re
 from glob import glob
 import os
 import json
+from os.path import dirname
 
 def extract_data(inputfile):
   list_of_dicts = []
@@ -21,11 +22,10 @@ def extract_data(inputfile):
           ver_suffix = line.group(3),
           hashtag = line.group(4)
         ))
+  print(json.dumps(list_of_dicts, sort_keys=True, indent=2))
   return json.dumps(list_of_dicts, sort_keys=True, indent=2)
 
 
-dir_path = os.path.dirname(os.path.realpath(__file__))
-print(extract_data("%s/logfile" % dir_path))
-
-with open("%s/data.json" % dir_path, 'w' ) as file:
-  file.write(extract_data("%s/logfile" % dir_path))
+path = dirname(dirname(realpath(__file__)))
+with open("%s/data.json" % path, 'w' ) as file:
+  file.write(extract_data("%s/logfile" % path))
