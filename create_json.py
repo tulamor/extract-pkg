@@ -13,7 +13,7 @@ def extract_data(inputfile):
   list_of_dicts = []
   with open(inputfile, 'r') as file:
     first_char = file.read(1)
-    if not first_char: sys.exit(1)
+    if not first_char: print("Error: Input file is empty"), sys.exit(1)
     pattern = re.compile('^([a-z]+)\+([\w-]+)\+([\w.-]+)\s\(([\w]+)\)')
     matched_lines = [pattern.match(l) for l in file.readlines()]
     for line in matched_lines: 
@@ -24,7 +24,6 @@ def extract_data(inputfile):
           ver_suffix = line.group(3),
           hashtag = line.group(4)
         ))
-  print(json.dumps(list_of_dicts, sort_keys=True, indent=2))
   return json.dumps(list_of_dicts, sort_keys=True, indent=2)
 
 
