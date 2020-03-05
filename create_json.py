@@ -12,6 +12,8 @@ from os.path import dirname, realpath
 def extract_data(inputfile):
   list_of_dicts = []
   with open(inputfile, 'r') as file:
+    first_char = file.read(1)
+    if not first_char: sys.exit(1)
     pattern = re.compile('^([a-z]+)\+([\w-]+)\+([\w.-]+)\s\(([\w]+)\)')
     matched_lines = [pattern.match(l) for l in file.readlines()]
     for line in matched_lines: 
